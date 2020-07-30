@@ -1,11 +1,13 @@
 package medesata.customers;
 
 public interface Customers {
-    String setFirstName();
-    String setSecondName();
-    String setLastName();
-    String setEmail();
-    String setPhoneNumber();
+    String getFirstName();
+    String getSecondName();
+    String getLastName();
+    String getEmail();
+    String getPhoneNumber();
+
+
 
     //TODO
 
