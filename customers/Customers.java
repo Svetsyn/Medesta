@@ -1,4 +1,4 @@
-package medesata;
+package medesata.customers;
 
 public interface Customers {
     String setFirstName();

@@ -1,4 +1,6 @@
-package medesata;
+package medesata.customers;
+
+import medesata.customers.Customers;
 
 public abstract class Customer implements Customers {
 

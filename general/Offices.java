@@ -1,4 +1,4 @@
-package medesata;
+package medesata.general;
 
 public enum Offices {
     VenusLegasy,

@@ -1,4 +1,4 @@
-package medesata;
+package medesata.employee;
 
 public abstract class Employee {
     protected String firstName;
