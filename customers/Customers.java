@@ -8,6 +8,7 @@ public interface Customers {
     String getPhoneNumber();
 
 
+    void getDiscount(int pеrcentage);
 
     //TODO
 
