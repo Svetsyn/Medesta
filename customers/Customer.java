@@ -19,20 +19,6 @@ public abstract class Customer implements Customers {
         this.setPhoneNumber(phoneNumber);
     }
 
-//    public Customer(String firstName, String secondName, String lastName, String phoneNumber) {
-//        this.setFirstName(firstName);
-//        this.setSecondName(secondName);
-//        this.setLastName(lastName);
-//        this.setPhoneNumber(phoneNumber);
-//        this.email="n/a";
-//    }
-//    public Customer(String firstName, String secondName, String lastName, String email) {
-//        this.setFirstName(firstName);
-//        this.setSecondName(secondName);
-//        this.setLastName(lastName);
-//        this.setEmail(email);
-//        this.phoneNumber="n/a";
-//    }
 
     @Override
     public String getFirstName() {

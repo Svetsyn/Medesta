@@ -1,20 +1,11 @@
 package medesata.employee;
 
-public abstract class Employee {
-    protected String firstName;
-    protected String secondName;
-    protected String lastName;
-    protected String gender;
-    protected String country;
-    protected int age;
+public interface Employee {
+     String getFirstName();
+     String getSecondName();
+     String getLastName();
+     String getGender();
+     int getAge();
 
-    public Employee(String firstName, String secondName, String lastName, String gender, String country, int age) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.country = country;
-        this.age = age;
-    }
-
+     //TODO
 }
