@@ -9,7 +9,7 @@ public abstract class BaseEmployee implements Employee {
     private String gender;
     private int age;
 
-    public BaseEmployee(String firstName,String secondName,String lastName,String gender,int age){
+    public BaseEmployee(String firstName, String secondName, String lastName, String gender, int age) {
         this.setFirstName(firstName);
         this.setSecondName(secondName);
         this.setLastName(lastName);
@@ -23,8 +23,8 @@ public abstract class BaseEmployee implements Employee {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName==null || firstName.trim().isEmpty()){
-            throw  new NullPointerException(Message.NULL_NAME);
+        if (firstName == null || firstName.trim().isEmpty()) {
+            throw new NullPointerException(Message.NULL_NAME);
         }
         this.firstName = firstName;
     }
@@ -36,7 +36,7 @@ public abstract class BaseEmployee implements Employee {
     }
 
     public void setSecondName(String secondName) {
-        if (secondName==null ||secondName.trim().isEmpty()){
+        if (secondName == null || secondName.trim().isEmpty()) {
             throw new NullPointerException(Message.NULL_NAME);
         }
         this.secondName = secondName;
@@ -49,7 +49,7 @@ public abstract class BaseEmployee implements Employee {
     }
 
     public void setLastName(String lastName) {
-        if (lastName==null || lastName.trim().isEmpty()){
+        if (lastName == null || lastName.trim().isEmpty()) {
             throw new NullPointerException(Message.NULL_NAME);
         }
         this.lastName = lastName;
@@ -61,7 +61,7 @@ public abstract class BaseEmployee implements Employee {
     }
 
     public void setGender(String gender) {
-        if (gender==null || gender.trim().isEmpty()){
+        if (gender == null || gender.trim().isEmpty()) {
             throw new NullPointerException(Message.INVALID_TEXT);
         }
         this.gender = gender;
@@ -74,7 +74,7 @@ public abstract class BaseEmployee implements Employee {
     }
 
     public void setAge(int age) {
-        if (age<=0){
+        if (age <= 0) {
             throw new IllegalArgumentException(Message.INVALID_AGE);
         }
         this.age = age;

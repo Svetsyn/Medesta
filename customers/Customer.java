@@ -39,7 +39,7 @@ public abstract class Customer implements Customers {
     }
 
     public void setSecondName(String secondName) {
-        if (secondName==null || secondName.trim().isEmpty()){
+        if (secondName == null || secondName.trim().isEmpty()) {
             throw new NullPointerException(Message.NULL_NAME);
         }
 
@@ -52,7 +52,7 @@ public abstract class Customer implements Customers {
     }
 
     public void setLastName(String lastName) {
-        if (lastName==null || lastName.trim().isEmpty()){
+        if (lastName == null || lastName.trim().isEmpty()) {
             throw new NullPointerException(Message.NULL_NAME);
         }
 
@@ -65,10 +65,10 @@ public abstract class Customer implements Customers {
     }
 
     public void setEmail(String email) {
-        if (email==null || email.trim().isEmpty()){
+        if (email == null || email.trim().isEmpty()) {
             throw new NullPointerException(Message.NULL_NAME);
         }
-        if (!email.contains("@")){
+        if (!email.contains("@")) {
             throw new IllegalArgumentException(Message.INVALID_FORMAT);
         }
 
@@ -81,11 +81,10 @@ public abstract class Customer implements Customers {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber==null || phoneNumber.trim().isEmpty()){
+        if (phoneNumber == null || phoneNumber.trim().isEmpty()) {
             throw new NullPointerException(Message.NULL_PHONE_NUMBER);
         }
     }
-
 
 
     //TODO
