@@ -13,7 +13,6 @@ public class Procedure extends BaseEntity {
     private BigDecimal price;
     // Todo try to find appropriate date structure
     private int minutes;
-    private Set<Customer> customers;
 
     public Procedure() {
     }
@@ -63,12 +62,4 @@ public class Procedure extends BaseEntity {
         this.minutes = minutes;
     }
 
-    @ManyToMany
-    public Set<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(Set<Customer> customers) {
-        this.customers = customers;
-    }
 }

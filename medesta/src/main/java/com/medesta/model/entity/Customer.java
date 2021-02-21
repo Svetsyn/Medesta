@@ -1,9 +1,6 @@
 package com.medesta.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -50,7 +47,7 @@ public class Customer extends BaseEntity{
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    @ManyToMany
+    @OneToMany
     public Set<Procedure> getProcedures() {
         return procedures;
     }
