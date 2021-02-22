@@ -2,8 +2,8 @@ package com.medesta.service.impl;
 
 import com.medesta.model.entity.Role;
 import com.medesta.model.entity.RoleName;
-import com.medesta.service.RoleService;
 import com.medesta.repository.RoleRepository;
+import com.medesta.service.RoleService;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -20,11 +20,12 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void initRole() {
         if (roleRepository.count() == 0) {
-            Arrays.stream(RoleName.values())
-                    .forEach(roleName -> {
-                       Role role=new Role(roleName);
-                       roleRepository.save(role);
-                    });
+
+            Arrays.stream(RoleName.values()).forEach(roleName -> {
+                Role role = new Role(roleName);
+
+                roleRepository.save(role);
+            });
         }
     }
 }
