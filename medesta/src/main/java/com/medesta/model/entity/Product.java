@@ -1,11 +1,12 @@
 package com.medesta.model.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import java.math.BigDecimal;
 
-@Email
+@Entity
 @Table(name = "products")
 public class Product extends BaseEntity{
 

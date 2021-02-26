@@ -62,7 +62,6 @@ public class Customer extends BaseEntity {
         this.procedures = procedures;
     }
 
-
     @OneToMany
     public Set<Product> getProducts() {
         return products;
