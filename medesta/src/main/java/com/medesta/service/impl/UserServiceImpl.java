@@ -1,6 +1,6 @@
 package com.medesta.service.impl;
 
-import com.medesta.model.entity.RoleName;
+import com.medesta.model.enums.RoleName;
 import com.medesta.model.entity.User;
 import com.medesta.model.service.UserServiceModel;
 import com.medesta.repository.UserRepository;
@@ -26,11 +26,11 @@ public class UserServiceImpl implements UserService {
     public void registerUser(UserServiceModel userServiceModel) {
         User newUser = modelMapper.map(userServiceModel, User.class);
 
-        if (newUser.getFirstName().equals("Svetlin") && newUser.getLastName().equals("Stoyanov")) {
-            newUser.setRoles(roleService.findRole(RoleName.ADMIN));
-        } else {
-            newUser.setRoles(roleService.findRole(RoleName.OTHER));
-        }
+//        if (newUser.getFirstName().equals("Svetlin") && newUser.getLastName().equals("Stoyanov")) {
+//            newUser.setRoles(roleService.findRole(RoleName.ADMIN));
+//        } else {
+//            newUser.setRoles(roleService.findRole(RoleName.OTHER));
+//        }
 
         userRepository.save(newUser);
     }

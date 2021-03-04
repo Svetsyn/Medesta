@@ -1,7 +1,7 @@
 package com.medesta.service.impl;
 
 import com.medesta.model.entity.Role;
-import com.medesta.model.entity.RoleName;
+import com.medesta.model.enums.RoleName;
 import com.medesta.repository.RoleRepository;
 import com.medesta.service.RoleService;
 import org.springframework.stereotype.Service;

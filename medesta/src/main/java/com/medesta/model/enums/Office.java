@@ -1,4 +1,4 @@
-package com.medesta.model.entity;
+package com.medesta.model.enums;
 
 public enum Office {
     LASER,

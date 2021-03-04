@@ -1,7 +1,8 @@
 package com.medesta.model.entity;
 
+import com.medesta.model.enums.RoleName;
+
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "roles")
