@@ -4,7 +4,7 @@ import com.medesta.model.entity.Role;
 import com.medesta.model.enums.RoleName;
 
 public interface RoleService {
-    void initRole();
-
-    Role findRole(RoleName roleName);
+//    void initRole();
+//
+//    Role findRole(RoleName roleName);
 }

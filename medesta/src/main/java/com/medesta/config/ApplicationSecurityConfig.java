@@ -3,10 +3,8 @@ package com.medesta.config;
 import com.medesta.service.impl.MedestaDBUserService;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,7 +28,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 authorizeRequests().
                 requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
-                antMatchers("/", "users/login", "users/register").permitAll().
+                antMatchers("/", "users/login", "users/register","/resources/**").permitAll().
                 antMatchers("/**").hasRole("ADMIN").
                 and().
                 formLogin().
@@ -47,4 +45,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 userDetailsService(medestaDBUserService).
                 passwordEncoder(passwordEncoder);
     }
+
+
 }

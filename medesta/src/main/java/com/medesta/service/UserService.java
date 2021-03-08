@@ -4,5 +4,5 @@ import com.medesta.model.service.UserServiceModel;
 
 public interface UserService {
 
-    void registerUser(UserServiceModel userServiceModel);
+    void seedUserRole();
 }
