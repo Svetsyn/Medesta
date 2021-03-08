@@ -17,6 +17,13 @@ public class Customer extends BaseEntity {
     public Customer() {
     }
 
+    public Customer(String firstName, String lastName, String email, String phone) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.email=email;
+        this.phoneNumber=phone;
+    }
+
     @Column(name = "first_name", nullable = false)
     public String getFirstName() {
         return firstName;
