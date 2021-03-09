@@ -18,25 +18,25 @@
 
                                 <div class="input-group">
                                     <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Username</label>
-                                    <input th:field="*{username}" th:errorclass="bg-danger" name="username" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
+                                    <input th:field="*{username}" th:errorclass="bg-warning" name="username" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
                                            id="username" placeholder="Enter username">
 									<div class="mx-auto">
-										<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-danger">Username must be between 3 and 20 characters</small>
+										<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-warning">Username must be between 3 and 20 characters</small>
 									</div>
                                 </div>
 
                                 <div class="input-group mt-3">
                                     <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Password</label>
-                                    <input th:field="*{password}" th:errorclass="bg-danger" name="password" type="password" class="form-control validate"
+                                    <input th:field="*{password}" th:errorclass="bg-warning" name="password" type="password" class="form-control validate"
                                            id="password" placeholder="Enter password">
 									<div class="mx-auto">
-										<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger">Password must be betweeen 3 and 10 characters</small>
+										<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-warning">Password must be betweeen 3 and 10 characters</small>
 									</div>
                                 </div>
 
                                 <div class="input-group mt-3">
                                     <label for="confirmPassword" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Confirm Password</label>
-                                    <input th:field="*{confirmPassword}" th:errorclass="bg-danger" name="confirmPassword" type="password" class="form-control validate" id="confirmPassword" placeholder="Confirm password" >
+                                    <input th:field="*{confirmPassword}" th:errorclass="bg-warning  " name="confirmPassword" type="password" class="form-control validate" id="confirmPassword" placeholder="Confirm password" >
                                 </div>
 
                                 <div class="input-group mt-3">

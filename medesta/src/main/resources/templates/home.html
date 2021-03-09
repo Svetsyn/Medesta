@@ -1,24 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Judge v2</title>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <!--    Calendar-->
-    <script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js"
-            integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css"
-          integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
-</head>
+<head th:include="~{fragments/head}"></head>
 
 <body id="reportsPage">
 <div class="" id="home">
@@ -41,7 +24,7 @@
                         <span>Hello {username}</span>
                     </a>
                 </li>
-                
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                            role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -54,7 +37,7 @@
 
                         </div>
                     </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Check Homework</a>
                 </li>
@@ -65,7 +48,7 @@
 				<li class="nav-item">
                     <a class="nav-link" href="#">Profile</a>
                 </li>
-            
+
             </ul>
             <ul class="navbar-nav">
 
@@ -111,11 +94,11 @@
                         </div>
                     </div>
                     <ol class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
-                        
+
                             <li class="tm-list-group-item" >Top student one</li>
 							<li class="tm-list-group-item" >Top student two</li>
 							<li class="tm-list-group-item" >Top student three</li>
-                        
+
                     </ol>
                 </div>
             </div>
@@ -128,11 +111,11 @@
                 <div class="bg-white tm-block h-100">
                     <h2 class="tm-block-title">Active Exercises</h2>
                     <ol class="tm-list-group">
-                        
+
                             <li class="tm-list-group-item">Active exercise one</li>
 							 <li class="tm-list-group-item">Active exercise two</li>
 							  <li class="tm-list-group-item">Active exercise three</li>
-                      
+
                     </ol>
                 </div>
             </div>
