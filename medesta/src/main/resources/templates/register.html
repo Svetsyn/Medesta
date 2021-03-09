@@ -11,49 +11,36 @@
         </div>
         <div class="row tm-mt-big">
             <div class="col-12 mx-auto tm-login-col">
-                <div class="bg-white tm-block">
+                <div class="bg-secondary tm-block">
                     <div class="row mt-2">
                         <div class="col-12">
                             <form  action="/users/register" method="POST" th:object="${registerBindingModel}" class="tm-login-form">
+
                                 <div class="input-group">
-                                    <label for="firstName" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">First Name</label>
-                                    <input th:field="*{firstName}" th:errorclass="bg-danger" name="firstName" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
-                                           id="firstName" placeholder="Enter firstname">
+                                    <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Username</label>
+                                    <input th:field="*{username}" th:errorclass="bg-danger" name="username" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
+                                           id="username" placeholder="Enter username">
 									<div class="mx-auto">
-										<small th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-danger">First name must be between 3 and 20 characters</small>
+										<small th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-danger">Username must be between 3 and 20 characters</small>
 									</div>
-                                </div>
-                                <div class="input-group">
-                                    <label for="lastName" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Last Name</label>
-                                    <input th:field="*{lastName}" th:errorclass="bg-danger" name="lastname" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
-                                           id="lastName" placeholder="Enter lastname">
-                                    <div class="mx-auto">
-                                        <small th:if="${#fields.hasErrors('lastName')}" th:erorrs="*{lastName}" class="text-danger">Last name must be between 2 and 10 characters</small>
-                                    </div>
                                 </div>
 
                                 <div class="input-group mt-3">
-                                    <label for="email" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Email</label>
-                                    <input th:field="*{email}" th:errorclass="bg-danger" name="email" type="email" class="form-control validate" id="email" placeholder="Enter email">
-                                    <div class="mx-auto">
-                                        <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger">Enter valid email address</small>
-                                    </div>
-                                </div>
-                                <div class="input-group mt-3">
-                                    <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Password</label>
+                                    <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Password</label>
                                     <input th:field="*{password}" th:errorclass="bg-danger" name="password" type="password" class="form-control validate"
                                            id="password" placeholder="Enter password">
 									<div class="mx-auto">
 										<small th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger">Password must be betweeen 3 and 10 characters</small>
 									</div>
                                 </div>
+
                                 <div class="input-group mt-3">
-                                    <label for="confirmPassword" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Confirm Password</label>
+                                    <label for="confirmPassword" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Confirm Password</label>
                                     <input th:field="*{confirmPassword}" th:errorclass="bg-danger" name="confirmPassword" type="password" class="form-control validate" id="confirmPassword" placeholder="Confirm password" >
                                 </div>
 
                                 <div class="input-group mt-3">
-                                    <button type="submit" class="btn btn-primary d-inline-block mx-auto">Register</button>
+                                    <button type="submit" class="btn btn-primary d-inline-block mx-auto bg-light ">Register</button>
                                 </div>
 
                             </form>

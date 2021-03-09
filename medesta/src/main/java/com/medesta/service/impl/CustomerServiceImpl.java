@@ -1,6 +1,5 @@
 package com.medesta.service.impl;
 
-import com.medesta.constant.Constant;
 import com.medesta.model.entity.Customer;
 import com.medesta.repository.CustomerRepository;
 import com.medesta.service.CustomerService;
@@ -26,6 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void seedCurrentCustomer() throws IOException {
 
+        if (customerRepository.count() == 0) {
             String[] fileLine = fileUtil.readFileContent(CUSTOMER_CURRENT_PATH);
 
 
@@ -42,4 +42,5 @@ public class CustomerServiceImpl implements CustomerService {
             }
         }
     }
+}
 

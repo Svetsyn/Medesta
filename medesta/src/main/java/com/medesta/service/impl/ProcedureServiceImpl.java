@@ -1,7 +1,7 @@
 package com.medesta.service.impl;
 
-import com.medesta.model.enums.Office;
 import com.medesta.model.entity.Procedure;
+import com.medesta.model.enums.Office;
 import com.medesta.repository.ProcedureRepository;
 import com.medesta.service.ProcedureService;
 import org.springframework.stereotype.Service;

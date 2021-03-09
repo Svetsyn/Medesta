@@ -1,6 +1,8 @@
 package com.medesta.web;
 
+import com.medesta.model.binding.LoginBindingModel;
 import com.medesta.model.binding.RegisterBindingModel;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +16,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/users")
 public class UserController {
+
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -37,5 +40,27 @@ public class UserController {
 
         //Todo save in the DB
         return "redirect:login";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model){
+        if (model.containsAttribute("loginBindingModel")){
+            model.addAttribute("loginBindingModel",new LoginBindingModel());
+        }
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String loginConfirm(@Valid LoginBindingModel loginBindingModel,
+                               BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes){
+        if (bindingResult.hasErrors()){
+            redirectAttributes.addFlashAttribute("loginBindingModel",loginBindingModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.loginBindingModel",bindingResult);
+
+            return "redirect:login";
+        }
+
+        return "/home";
     }
 }

@@ -8,9 +8,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User extends BaseEntity {
     private String username;
-    //    private String lastName;
-//    private String email;
-   private String password;
+    private String password;
     private List<Role> roles;
 
     public User() {
@@ -25,41 +23,12 @@ public class User extends BaseEntity {
         this.username = username;
     }
 
-
-//    public String getUsername() {
-//        return username;
-//    }
-
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-//
-//
-//
-//
-//    @Column(name = "last_name", nullable = false)
-//    public String getLastName() {
-//        return lastName;
-//    }
-//
-//    public void setLastName(String lastName) {
-//        this.lastName = lastName;
-//    }
-//
-//    @Column(name = "email")
-//    public String getEmail() {
-//        return email;
-//    }
-//
     @Column(name = "password", nullable = false)
     public String getPassword() {
         return password;
     }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
+
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -68,6 +37,7 @@ public class User extends BaseEntity {
     public List<Role> getRoles() {
         return roles;
     }
+
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
