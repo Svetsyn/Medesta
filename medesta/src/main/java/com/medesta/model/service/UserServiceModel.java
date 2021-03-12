@@ -6,22 +6,22 @@ import java.util.List;
 
 public class UserServiceModel {
 
-    private String id;
+    private Long id;
     private String username;
     private String password;
-    private List<Role> roles;
+    private Role role;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public UserServiceModel() {
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getPassword() {
         return password;
@@ -39,11 +39,11 @@ public class UserServiceModel {
         this.username = username;
     }
 
-    public List<Role> getRoles() {
-        return roles;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

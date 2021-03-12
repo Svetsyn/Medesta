@@ -11,17 +11,18 @@ public class Customer extends BaseEntity {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private Set<Procedure> procedures;
-    private Set<Product> products;
+
+//    private Set<Procedure> procedures;
+    //private Set<Product> products;
 
     public Customer() {
     }
 
     public Customer(String firstName, String lastName, String email, String phone) {
-        this.firstName=firstName;
-        this.lastName=lastName;
-        this.email=email;
-        this.phoneNumber=phone;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phone;
     }
 
     @Column(name = "first_name", nullable = false)
@@ -60,21 +61,14 @@ public class Customer extends BaseEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    @OneToMany
-    public Set<Procedure> getProcedures() {
-        return procedures;
-    }
+//    @OneToMany
+//    public Set<Procedure> getProcedures() {
+//        return procedures;
+//    }
+//
+//    public void setProcedures(Set<Procedure> procedures) {
+//        this.procedures = procedures;
+//    }
 
-    public void setProcedures(Set<Procedure> procedures) {
-        this.procedures = procedures;
-    }
-
-    @OneToMany
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
+//
 }
