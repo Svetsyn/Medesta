@@ -1,16 +1,17 @@
 <th:block xmlns:th="http://www.thymeleaf.org">
-    <nav class="navbar navbar-expand-xl navbar-light bg-light rounded" >
-        <p class="navbar-brand" >
-            <h1 class="tm-site-title mb-0">MEDESTA CLIENT MANAGER</h1>
+    <nav class="navbar navbar-expand-xl navbar-light bg-light rounded">
+        <p class="navbar-brand">
+        <h1 class="tm-site-title mb-0">MEDESTA CLIENT MANAGER</h1>
         </p>
-        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul th:unless="${@currentUser.isAnonymous()}" class="navbar-nav mx-auto">
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" href="#">
                         <span th:text="|Hello ${@currentUser.username}|">Hello {username}</span>
                     </a>
@@ -23,22 +24,24 @@
                         Admin
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Add Procedure</a>
+                        <a class="dropdown-item" href="procedures/add">Add Procedure</a>
                         <a class="dropdown-item" href="/roles/add">Add Role</a>
-                        <a class="dropdown-item" href="#">Add Product</a>
+                        <a class="dropdown-item" href="products/add">Add Product</a>
+                        <a class="dropdown-item" href="customers/add">Add Customer</a>
 
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Add Role</a>
+                <li th:unless="${@currentUser.isTherapist()}" class="nav-item">
+                    <a class="nav-link" href="#">Add Procedure</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Add Product</a>
+                <li th:unless="${@currentUser.isTherapist()}" class="nav-item">
+                    <a class="nav-link" href="#">Add
+                        Product</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Procedure</a>
+                <li th:unless="${@currentUser.isAdmin()}" class="nav-item">
+                    <a class="nav-link" href="#">Add Customer</a>
                 </li>
 
             </ul>

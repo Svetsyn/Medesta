@@ -1,5 +1,8 @@
 package com.medesta.service;
 
+import com.medesta.model.entity.Role;
+import com.medesta.model.entity.User;
+import com.medesta.model.enums.RoleName;
 import com.medesta.model.service.UserServiceModel;
 
 import java.util.List;
@@ -16,4 +19,9 @@ public interface UserService {
     void logout();
 
     List<String> findAllUsername();
+
+
+    void changeRole(String username, RoleName roleName);
+
+    void changeRoleNew(String username, RoleName name);
 }
