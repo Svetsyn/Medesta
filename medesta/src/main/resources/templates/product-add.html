@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="~{fragments/head}"></head>
+
+<body>
+<div class="container">
+    <div class="row rounded">
+        <div class="col-12">
+            <nav th:include="~{fragments/navigation}"></nav>
+        </div>
+    </div>
+    <!-- row -->
+    <div class="row tm-mt-big justify-content-center">
+        <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
+            <div class="bg-secondary tm-block">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="tm-block-title d-inline-block text-white">Add Product</h2>
+                    </div>
+                </div>
+                <div class="row mt-4 tm-edit-product-row">
+                    <div class="col-xl-7 col-lg-7 col-md-12">
+                        <form action="/products/add" method="POST"
+                              class="tm-edit-product-form">
+                            <div class="input-group mb-3">
+                                <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Name
+                                </label>
+                                <input id="name" name="name" type="text"
+                                       class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"/>
+
+                            </div>
+                            <div class="input-group mb-3 justify-content-center">
+
+                                <small class="text-warning">Name length must be more than 2 characters</small>
+
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label for="description"
+                                       class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Description
+                                </label>
+                                <input id="description" name="description" type="text"
+                                       class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"/>
+
+                            </div>
+                            <div class="input-group mb-3 justify-content-center">
+
+                                <small class="text-warning">Description length must be more than 2 characters</small>
+
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label for="price"
+                                       class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Price
+                                </label>
+                                <input id="price" name="description" type="text"
+                                       class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"/>
+
+                            </div>
+                            <div class="input-group mb-3 justify-content-center">
+
+                                <small class="text-warning">Price length must be more than 2 characters</small>
+
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label for="expireDate"
+                                       class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label text-white">Expiration
+                                    date
+                                </label>
+                                <input id="expireDate" name="expireDate" type="date"
+                                       class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
+                                       data-large-mode="true"/>
+
+                            </div>
+                            <div class="input-group mb-3 justify-content-center">
+
+                                <small class="text-warning">The date cannot be in the future!</small>
+
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
+                                    <button type="submit" class="btn btn-primary bg-light">Add
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 mx-auto mb-4">
+                        <img src="/img/cosmetics.jpg" alt="Exercise picture" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:include="~{fragments/footer}"></footer>
+</div>
+
+</body>
+
+</html>

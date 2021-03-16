@@ -1,9 +1,11 @@
 package com.medesta.service.impl;
 
 import com.medesta.model.entity.Customer;
+import com.medesta.model.service.CustomerServiceModel;
 import com.medesta.repository.CustomerRepository;
 import com.medesta.service.CustomerService;
 import com.medesta.utils.FileUtil;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,10 +18,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     private final FileUtil fileUtil;
     private final CustomerRepository customerRepository;
+    private final ModelMapper modelMapper;
 
-    public CustomerServiceImpl(FileUtil fileUtil, CustomerRepository customerRepository) {
+    public CustomerServiceImpl(FileUtil fileUtil, CustomerRepository customerRepository, ModelMapper modelMapper) {
         this.fileUtil = fileUtil;
         this.customerRepository = customerRepository;
+        this.modelMapper = modelMapper;
     }
 
     @Override
@@ -41,6 +45,14 @@ public class CustomerServiceImpl implements CustomerService {
                 customerRepository.save(customer);
             }
         }
+    }
+
+    @Override
+    public void addCustomer(CustomerServiceModel customerServiceModel) {
+
+        Customer customer = modelMapper.map(customerServiceModel,Customer.class);
+
+        customerRepository.save(customer);
     }
 }
 
