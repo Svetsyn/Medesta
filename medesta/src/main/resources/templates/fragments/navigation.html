@@ -26,22 +26,21 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="procedures/add">Add Procedure</a>
                         <a class="dropdown-item" href="/roles/add">Add Role</a>
-                        <a class="dropdown-item" href="products/add">Add Product</a>
-                        <a class="dropdown-item" href="customers/add">Add Customer</a>
+                        <a class="dropdown-item" href="/products/add">Add Product</a>
+                        <a class="dropdown-item" href="/customers/add">Add Customer</a>
 
                     </div>
                 </li>
 
-                <li th:unless="${@currentUser.isTherapist()}" class="nav-item">
-                    <a class="nav-link" href="#">Add Procedure</a>
+                <li  class="nav-item">
+                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link" href="#">Add Procedure</a>
                 </li>
 
-                <li th:unless="${@currentUser.isTherapist()}" class="nav-item">
-                    <a class="nav-link" href="#">Add
-                        Product</a>
+                <li  class="nav-item">
+                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link" href="#">Add Product</a>
                 </li>
-                <li th:unless="${@currentUser.isAdmin()}" class="nav-item">
-                    <a class="nav-link" href="#">Add Customer</a>
+                <li  class="nav-item">
+                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor() or @currentUser.isTherapist()}" class="nav-link" href="#">Add Customer</a>
                 </li>
 
             </ul>

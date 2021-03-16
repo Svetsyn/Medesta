@@ -437,6 +437,9 @@ footer {
     z-index: 1000;
   }
 
+/*.collapse .navbar-collapse .ul .li{*/
+/*  font-family: Helvetica;*/
+/*}*/
   .navbar-nav .nav-link {
     padding-right: 15px;
     padding-left: 15px;
