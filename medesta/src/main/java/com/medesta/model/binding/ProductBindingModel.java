@@ -1,26 +1,24 @@
-package com.medesta.model.entity;
+package com.medesta.model.binding;
 
 import com.medesta.model.enums.ProductCategory;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "products")
-public class Product extends BaseEntity {
-
+public class ProductBindingModel {
     private String name;
     private String description;
     private BigDecimal price;
     private LocalDate expireDate;
     private String category;
 
-    public Product() {
+    public ProductBindingModel() {
     }
 
-    @Column(name = "name", nullable = false, unique = true)
+    @NotBlank(message = "This field cannot be empty")
+    @Size(min = 3, message = "The product name must be minimum 3 characters")
     public String getName() {
         return name;
     }
@@ -29,7 +27,8 @@ public class Product extends BaseEntity {
         this.name = name;
     }
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @NotBlank(message = "This field cannot be empty")
+    @Size(min = 5, message = "Description must be minimum 5 characters")
     public String getDescription() {
         return description;
     }
@@ -38,7 +37,7 @@ public class Product extends BaseEntity {
         this.description = description;
     }
 
-    @Column(name = "price", nullable = false)
+    @NotNull(message = "This field cannot be empty")
     public BigDecimal getPrice() {
         return price;
     }
@@ -47,7 +46,8 @@ public class Product extends BaseEntity {
         this.price = price;
     }
 
-    @Column(name = "expiration_date", nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Future(message = "The date can not be in the past or present")
     public LocalDate getExpireDate() {
         return expireDate;
     }
@@ -55,16 +55,8 @@ public class Product extends BaseEntity {
     public void setExpireDate(LocalDate expireDate) {
         this.expireDate = expireDate;
     }
-//    @Enumerated(EnumType.STRING)
-//    public ProductCategory getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(ProductCategory category) {
-//        this.category = category;
-//    }
 
-@Column(name = "category")
+    @NotNull(message = "Please select from categories")
     public String getCategory() {
         return category;
     }

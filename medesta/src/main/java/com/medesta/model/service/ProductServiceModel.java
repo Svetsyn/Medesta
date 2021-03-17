@@ -1,26 +1,29 @@
-package com.medesta.model.entity;
+package com.medesta.model.service;
 
 import com.medesta.model.enums.ProductCategory;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "products")
-public class Product extends BaseEntity {
-
+public class ProductServiceModel {
+    private Long id;
     private String name;
     private String description;
     private BigDecimal price;
     private LocalDate expireDate;
     private String category;
 
-    public Product() {
+    public ProductServiceModel() {
     }
 
-    @Column(name = "name", nullable = false, unique = true)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -29,7 +32,6 @@ public class Product extends BaseEntity {
         this.name = name;
     }
 
-    @Column(name = "description", columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -38,7 +40,6 @@ public class Product extends BaseEntity {
         this.description = description;
     }
 
-    @Column(name = "price", nullable = false)
     public BigDecimal getPrice() {
         return price;
     }
@@ -47,7 +48,6 @@ public class Product extends BaseEntity {
         this.price = price;
     }
 
-    @Column(name = "expiration_date", nullable = false)
     public LocalDate getExpireDate() {
         return expireDate;
     }
@@ -55,16 +55,7 @@ public class Product extends BaseEntity {
     public void setExpireDate(LocalDate expireDate) {
         this.expireDate = expireDate;
     }
-//    @Enumerated(EnumType.STRING)
-//    public ProductCategory getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(ProductCategory category) {
-//        this.category = category;
-//    }
 
-@Column(name = "category")
     public String getCategory() {
         return category;
     }
