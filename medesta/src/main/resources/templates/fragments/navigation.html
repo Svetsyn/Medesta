@@ -32,15 +32,18 @@
                     </div>
                 </li>
 
-                <li  class="nav-item">
-                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link" href="/products/add">Add Procedure</a>
+                <li class="nav-item">
+                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link"
+                       href="/products/add">Add Procedure</a>
                 </li>
 
-                <li  class="nav-item">
-                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link" href="#">Add Product</a>
+                <li class="nav-item">
+                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link" href="#">Add
+                        Product</a>
                 </li>
-                <li  class="nav-item">
-                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor() or @currentUser.isTherapist()}" class="nav-link" href="/customers/add">Add Customer</a>
+                <li class="nav-item">
+                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor() or @currentUser.isTherapist()}"
+                       class="nav-link" href="/customers/add">Add Customer</a>
                 </li>
 
             </ul>

@@ -15,6 +15,7 @@ public class DBInit implements CommandLineRunner {
     private final CustomerService customerService;
     private final ProductService productService;
 
+
     public DBInit(UserService userService, RoleService roleService, CustomerService customerService, ProductService productService) {
         this.roleService = roleService;
         this.customerService = customerService;
