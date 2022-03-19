@@ -1,5 +1,7 @@
 package com.medesta.model.entity;
 
+import com.medesta.model.enums.CustomerCategory;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -11,6 +13,7 @@ public class Customer extends BaseEntity {
     private String lastName;
     private String email;
     private String phoneNumber;
+    private CustomerCategory category;
 
 //    private Set<Procedure> procedures;
     //private Set<Product> products;
@@ -61,7 +64,16 @@ public class Customer extends BaseEntity {
         this.phoneNumber = phoneNumber;
     }
 
-//    @OneToMany
+    @Enumerated(EnumType.STRING)
+    public CustomerCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(CustomerCategory category) {
+        this.category = category;
+    }
+
+    //    @OneToMany
 //    public Set<Procedure> getProcedures() {
 //        return procedures;
 //    }

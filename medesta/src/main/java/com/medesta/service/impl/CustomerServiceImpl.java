@@ -54,5 +54,10 @@ public class CustomerServiceImpl implements CustomerService {
 
         customerRepository.save(customer);
     }
+
+    @Override
+    public Customer findCustomerByFirstName(String firstName) {
+        return null;
+    }
 }
 
