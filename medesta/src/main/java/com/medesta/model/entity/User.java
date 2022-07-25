@@ -9,7 +9,7 @@ import java.util.Set;
 public class User extends BaseEntity {
     private String username;
     private String password;
-    private Role role;
+    private List<Role> role;
 
     public User() {
     }
@@ -33,13 +33,13 @@ public class User extends BaseEntity {
         this.password = password;
     }
 
-    @ManyToOne
+    @ManyToMany
 
-    public Role getRole() {
+    public List<Role> getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(List<Role> role) {
         this.role = role;
     }
 }

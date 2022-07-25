@@ -4,7 +4,7 @@ spring:
     # Put here your user name
     username: root
     # Put here your password
-    password: 'Weak'
+    password: 'Svetsyn123'
     url: "jdbc:mysql://localhost:3306/medesta_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true"
   jpa:
     #For MySQL 8 uncomment bellow (comment MySQL 5)

@@ -6,6 +6,8 @@ import com.medesta.repository.RoleRepository;
 import com.medesta.service.RoleService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RoleServiceImpl implements RoleService {
 
@@ -33,7 +35,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Role findRole(RoleName name) {
+    public List<Role> findRole(RoleName name) {
         return roleRepository.findByName(name).orElse(null);
     }
 }

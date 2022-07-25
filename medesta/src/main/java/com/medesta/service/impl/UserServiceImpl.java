@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
 
         User user = userRepository.findByUsername(username).orElse(null);
 
-        if (user.getRole().getName() != roleName) {
+        if (user.getRole().get(0).getName() != roleName) {
             user.setRole(roleService.findRole(roleName));
         }
 
@@ -83,7 +83,7 @@ public class UserServiceImpl implements UserService {
     public void changeRoleNew(String username, RoleName name) {
         User user= userRepository.findByUsername(username).orElse(null);
 
-        if (user.getRole().getName() !=name){
+        if (user.getRole().get(0).getName() !=name){
             user.setRole(roleService.findRole(name));
         }
 
