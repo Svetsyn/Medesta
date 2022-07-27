@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // which pages will be authorized?
                         authorizeRequests().
                 antMatchers("/js/**","/css/**","/img/**").permitAll().
-                // allow CSS at "common" static location (static/css)
+                // todo allow CSS at "common" static location (static/css)
 //                        requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
                 // permit home page, login and registration pages for anyone
                         antMatchers("/", "/users/login", "/users/register").permitAll().
@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 and().
                 logout().
                 logoutUrl("/users/logout").
-                logoutSuccessUrl("/").
+                logoutSuccessUrl("/home").
                 invalidateHttpSession(true).
                 deleteCookies("JSESSIONID");
     }
