@@ -28,8 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 // which pages will be authorized?
                         authorizeRequests().
+                antMatchers("/js/**","/css/**","/img/**").permitAll().
                 // allow CSS at "common" static location (static/css)
-                        requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
+//                        requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
                 // permit home page, login and registration pages for anyone
                         antMatchers("/", "/users/login", "/users/register").permitAll().
                 // allow for moderators
@@ -44,8 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 loginPage("/users/login").
                 usernameParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY).
                 passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY).
-                defaultSuccessUrl("/").
-                failureForwardUrl("/users/login-error").
+                defaultSuccessUrl("/home").
+                failureForwardUrl("/users/login-error").//todo
                 and().
                 logout().
                 logoutUrl("/users/logout").
