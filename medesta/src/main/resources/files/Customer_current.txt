@@ -1,4 +1,4 @@
-Margarita Dimitrova m@d 08999999999
-Dimitrina Margaritova d@m 09899898989
-Anastasia Semova a@s 0896767676767
-Sashka Vaseva a@V 09989899889
+Margarita Dimitrova m@d 08999999999 GOOD
+Dimitrina Margaritova d@m 09899898989 REGULAR
+Anastasia Semova a@s 0896767676767 VIP
+Sashka Vaseva a@V 09989899889 GOOD

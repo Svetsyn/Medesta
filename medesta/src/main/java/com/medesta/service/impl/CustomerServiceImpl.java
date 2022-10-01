@@ -1,6 +1,7 @@
 package com.medesta.service.impl;
 
 import com.medesta.model.entity.Customer;
+import com.medesta.model.enums.CustomerCategory;
 import com.medesta.model.service.CustomerServiceModel;
 import com.medesta.repository.CustomerRepository;
 import com.medesta.service.CustomerService;
@@ -40,17 +41,31 @@ public class CustomerServiceImpl implements CustomerService {
                 String lastName = token[1];
                 String email = token[2];
                 String phone = token[3];
+                String category = token[4];
 
-                Customer customer = new Customer(firstName, lastName, email, phone);
+                CustomerCategory customerCategory = checkCategory(category);
+
+                Customer customer = new Customer(firstName, lastName, email, phone, customerCategory);
+
                 customerRepository.save(customer);
             }
         }
     }
 
+    private CustomerCategory checkCategory(String category) {
+        if (category.equals("GOOD")) {
+            return CustomerCategory.GOOD;
+        }
+        if (category.equals("REGULAR")) {
+            return CustomerCategory.REGULAR;
+        }
+        return CustomerCategory.VIP;
+    }
+
     @Override
     public void addCustomer(CustomerServiceModel customerServiceModel) {
 
-        Customer customer = modelMapper.map(customerServiceModel,Customer.class);
+        Customer customer = modelMapper.map(customerServiceModel, Customer.class);
 
         customerRepository.save(customer);
     }

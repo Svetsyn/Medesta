@@ -1,8 +1,9 @@
 package com.medesta.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.medesta.model.enums.CustomerCategory;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "customers")
@@ -12,7 +13,8 @@ public class Customer extends BaseEntity {
     private String lastName;
     private String email;
     private String phoneNumber;
-//    private CustomerCategory category;
+    private CustomerCategory category;
+    private Set<Procedure> procedures;
 
 //    private Set<Procedure> procedures;
     //private Set<Product> products;
@@ -20,11 +22,12 @@ public class Customer extends BaseEntity {
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, String email, String phone) {
+    public Customer(String firstName, String lastName, String email, String phoneNumber, CustomerCategory category) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.phoneNumber = phone;
+        this.phoneNumber = phoneNumber;
+        this.category = category;
     }
 
     @Column(name = "first_name", nullable = false)
@@ -63,23 +66,22 @@ public class Customer extends BaseEntity {
         this.phoneNumber = phoneNumber;
     }
 
-//    @Enumerated(EnumType.STRING)
-//    public CustomerCategory getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(CustomerCategory category) {
-//        this.category = category;
-//    }
+    @OneToMany
+    public Set<Procedure> getProcedures() {
+        return procedures;
+    }
 
-    //    @OneToMany
-//    public Set<Procedure> getProcedures() {
-//        return procedures;
-//    }
-//
-//    public void setProcedures(Set<Procedure> procedures) {
-//        this.procedures = procedures;
-//    }
+    public void setProcedures(Set<Procedure> procedures) {
+        this.procedures = procedures;
+    }
 
-//
+    @Enumerated(EnumType.STRING)
+    public CustomerCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(CustomerCategory category) {
+        this.category = category;
+    }
+
 }
