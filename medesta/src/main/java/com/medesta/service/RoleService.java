@@ -8,5 +8,5 @@ import java.util.List;
 public interface RoleService {
     void roleInit();
 
-    List<Role> findRole(RoleName admin);
+    Role findRole(RoleName admin);
 }

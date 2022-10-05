@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void registerUser(UserServiceModel userServiceModel) {
         User user = modelMapper.map(userServiceModel, User.class);
-        if (user.getUsername().equals("Svetsyn")) {
+        if (userRepository.count() == 0) {
             user.setRole(roleService.findRole(RoleName.ADMIN));
         } else {
             user.setRole(roleService.findRole(RoleName.RECEPTIONIST));
@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
 
         User user = userRepository.findByUsername(username).orElse(null);
 
-        if (user.getRole().get(0).getName() != roleName) {
+        if (user.getRole().getName() != roleName) {
             user.setRole(roleService.findRole(roleName));
         }
 
@@ -83,7 +83,7 @@ public class UserServiceImpl implements UserService {
     public void changeRoleNew(String username, RoleName name) {
         User user= userRepository.findByUsername(username).orElse(null);
 
-        if (user.getRole().get(0).getName() !=name){
+        if (user.getRole().getName() !=name){
             user.setRole(roleService.findRole(name));
         }
 

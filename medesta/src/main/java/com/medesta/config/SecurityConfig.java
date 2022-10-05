@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         antMatchers("/", "/users/login", "/users/register").permitAll().
                 // allow for moderators
                         antMatchers("/home").hasRole(RoleName.RECEPTIONIST.name()).
+                        antMatchers("/home").hasRole(RoleName.ADMIN.name()).
                 // allow for admins
                         antMatchers("/roles/add").hasRole(RoleName.ADMIN.name()).
                 // any remaining reqests should be authenticated

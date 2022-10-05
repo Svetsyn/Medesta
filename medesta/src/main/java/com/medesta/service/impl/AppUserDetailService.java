@@ -36,7 +36,7 @@ public class AppUserDetailService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
                 userEntity.getUsername(),
                 userEntity.getPassword(),
-                asGrantedAuthorities(userEntity.getRole()));
+                asGrantedAuthorities((List<Role>) userEntity.getRole()));
     }
     private List<GrantedAuthority> asGrantedAuthorities(List<Role> roleEntities) {
         return roleEntities.
