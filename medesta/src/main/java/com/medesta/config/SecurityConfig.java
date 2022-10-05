@@ -13,7 +13,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
     private final AppUserDetailService userDetailsService;
     private final PasswordEncoder passwordEncoder;
 
@@ -28,13 +27,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 // which pages will be authorized?
                         authorizeRequests().
-                antMatchers("/js/**","/css/**","/img/**").permitAll().
+                antMatchers("/js/**", "/css/**", "/img/**").permitAll().
                 // todo allow CSS at "common" static location (static/css)
 //                        requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
                 // permit home page, login and registration pages for anyone
                         antMatchers("/", "/users/login", "/users/register").permitAll().
                 // allow for moderators
-                        antMatchers("/pages/moderators").hasRole(RoleName.RECEPTIONIST.name()).
+                        antMatchers("/home").hasRole(RoleName.RECEPTIONIST.name()).
                 // allow for admins
                         antMatchers("/roles/add").hasRole(RoleName.ADMIN.name()).
                 // any remaining reqests should be authenticated
