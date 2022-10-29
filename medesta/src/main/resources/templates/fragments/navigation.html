@@ -1,5 +1,4 @@
-<th:block xmlns:th="http://www.thymeleaf.org"
-          xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block xmlns:sec="http://www.w3.org/1999/xhtml">
     <nav class="navbar navbar-expand-xl navbar-light bg-light rounded">
         <p class="navbar-brand">
         <h1 class="tm-site-title mb-0"><a class="nav-link d-flex" href="/">MEDESTA CLIENT MANAGER</a></h1>
@@ -12,16 +11,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item" sec:authorize="!isAuthenticated()">
-                    <a class="nav-link" href="#">
-<!--                        <span th:text="|Hello, ${@currentUser.username}|">Hello {username}</span>-->
-                        <span >Hello <th:block sec:authentication="name"></th:block></span>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">
+                        <span>Hello </span>
                     </a>
                 </li>
 
-<!--                <li sec:authorize="hasRole('ADMIN')" class="nav-item dropdown">-->
-                <li sec:authorize="!isAuthenticated()" class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                <!--                <li sec:authorize="hasRole('ADMIN')" class="nav-item dropdown">-->
+                <li class="nav-item dropdown" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown"
                        role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
                         Admin
@@ -36,7 +34,7 @@
                     </div>
                 </li>
 
-                <li sec:authorize="isAuthenticated()" class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1"
                        role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
@@ -49,7 +47,7 @@
                     </div>
                 </li>
 
-                <li sec:authorize="isAuthenticated()" class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
                        role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
@@ -60,7 +58,7 @@
                     </div>
                 </li>
 
-                <li sec:authorize="isAuthenticated()" class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3"
                        role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
@@ -71,19 +69,19 @@
 
                     </div>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link"-->
-<!--                       href="/products/add">Add Procedure</a>-->
-<!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link"-->
+                <!--                       href="/products/add">Add Procedure</a>-->
+                <!--                </li>-->
 
-<!--                <li class="nav-item">-->
-<!--                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link" href="#">Add-->
-<!--                        Product</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor() or @currentUser.isTherapist()}"-->
-<!--                       class="nav-link" href="/customers/add">Add Customer</a>-->
-<!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor()}" class="nav-link" href="#">Add-->
+                <!--                        Product</a>-->
+                <!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a th:if="${@currentUser.isReceptionist() or @currentUser.isDoctor() or @currentUser.isTherapist()}"-->
+                <!--                       class="nav-link" href="/customers/add">Add Customer</a>-->
+                <!--                </li>-->
 
 
             </ul>
@@ -98,7 +96,7 @@
                     <a class="nav-link d-flex" th:href="@{/users/register}">Register</a>
                 </li>
 
-                <li sec:authorize="isAuthenticated()" class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link d-flex" href="/users/logout">
                         <span>Logout</span>
                     </a>

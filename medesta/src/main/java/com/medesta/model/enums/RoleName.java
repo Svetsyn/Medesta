@@ -4,5 +4,6 @@ public enum RoleName {
     ADMIN,
     DOCTOR,
     RECEPTIONIST,
-    THERAPIST
+    THERAPIST,
+    ACCOUNTANT
 }

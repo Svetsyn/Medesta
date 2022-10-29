@@ -78,7 +78,8 @@ public class UserController {
 
             return "redirect:login";
         }
-        UserServiceModel user = userService.findUserByUsernameAndPassword(loginBindingModel.getUsername(), loginBindingModel.getPassword());
+        UserServiceModel user = userService.findUserByUsername(loginBindingModel.getUsername());
+//                .findUserByUsernameAndPassword(loginBindingModel.getUsername(), loginBindingModel.getPassword());
 
         if (user == null) {
             redirectAttributes.addFlashAttribute("loginBindingModel", loginBindingModel);
@@ -89,8 +90,10 @@ public class UserController {
         httpSession.setAttribute("user", user);
 
         userService.login(user);
-        return "home";
+        return "/home";
     }
+
+
 
     @GetMapping("/logout")
     public String logout() {

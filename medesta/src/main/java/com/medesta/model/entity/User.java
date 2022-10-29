@@ -9,10 +9,13 @@ import java.util.Set;
 public class User extends BaseEntity {
     private String username;
     private String password;
-    private Role role;
+    private String email;
+//    private Role role;
+    private Set<Role> roles;
 
     public User() {
     }
+
 
     @Column(name = "username", nullable = false,unique = true)
     public String getUsername() {
@@ -33,12 +36,31 @@ public class User extends BaseEntity {
         this.password = password;
     }
 
-    @ManyToOne
-    public Role getRole() {
-        return role;
+    @Column(name = "email",nullable = false,unique = true)
+    public String getEmail() {
+        return email;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    //    @ManyToOne
+//    public Role getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(Role role) {
+//        this.role = role;
+//    }
+
+
+    @ManyToMany
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

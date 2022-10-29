@@ -8,6 +8,7 @@ public class RegisterBindingModel {
     private String username;
     private String password;
     private String confirmPassword;
+    private String email;
 
     public RegisterBindingModel() {
     }
@@ -39,5 +40,14 @@ public class RegisterBindingModel {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    @Email(message = "Enter valid email address!")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

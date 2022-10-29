@@ -10,7 +10,8 @@ import java.util.List;
 public interface UserService {
 
 
-    UserServiceModel findUserByUsernameAndPassword(String username, String password);
+//    UserServiceModel findUserByUsernameAndPassword(String username, String password);
+    UserServiceModel findUserByUsername(String username);
 
     void registerUser(UserServiceModel userServiceModel);
 

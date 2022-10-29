@@ -9,7 +9,9 @@ public class UserServiceModel {
     private Long id;
     private String username;
     private String password;
+    private String email;
     private Role role;
+
 
     public Long getId() {
         return id;
@@ -37,6 +39,14 @@ public class UserServiceModel {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Role getRole() {
