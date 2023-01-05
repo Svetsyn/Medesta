@@ -45,17 +45,7 @@ public class User extends BaseEntity {
         this.email = email;
     }
 
-    //    @ManyToOne
-//    public Role getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(Role role) {
-//        this.role = role;
-//    }
-
-
-    @ManyToMany
+    @OneToMany
     public Set<Role> getRoles() {
         return roles;
     }

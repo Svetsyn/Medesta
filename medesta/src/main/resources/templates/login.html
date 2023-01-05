@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-<head th:include="~{fragments/head}"></head>
+<th:block th:include="~{fragments/head}"></th:block>
 
 <body>
 <div class="container ">
@@ -20,9 +20,8 @@
             <div class="bg-secondary tm-block">
                 <div class="row mt-2">
                     <div class="col-12">
-                        <form method="POST"
-                              th:action="@{/users/login}"
-                              th:object="${loginBindingModel}"
+                        <form method="POST" th:action="@{/users/login}"
+                        th:object="${loginBindingModel}"
                               class="tm-login-form">
                             <hr/>
                             <div class="input-group">

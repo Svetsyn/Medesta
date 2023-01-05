@@ -34,7 +34,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" sec:authorize="hasRole('RECEPTIONIST')">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1"
                        role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
@@ -47,7 +47,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" sec:authorize="hasRole('THERAPIST')">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
                        role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
@@ -58,7 +58,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" sec:authorize="hasRole('DOCTOR')">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3"
                        role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">

@@ -13,8 +13,10 @@ public class Customer extends BaseEntity {
     private String lastName;
     private String email;
     private String phoneNumber;
+    private User user;
     private CustomerCategory category;
     private Set<Procedure> procedures;
+    private Set<Product> products;
 
 //    private Set<Procedure> procedures;
     //private Set<Product> products;
@@ -57,6 +59,15 @@ public class Customer extends BaseEntity {
         this.email = email;
     }
 
+    @ManyToOne
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Column(name = "phone_number", nullable = false)
     public String getPhoneNumber() {
         return phoneNumber;
@@ -66,13 +77,22 @@ public class Customer extends BaseEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     public Set<Procedure> getProcedures() {
         return procedures;
     }
 
     public void setProcedures(Set<Procedure> procedures) {
         this.procedures = procedures;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY)
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 
     @Enumerated(EnumType.STRING)

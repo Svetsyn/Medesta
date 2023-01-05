@@ -70,8 +70,7 @@ public class UserController {
     @PostMapping("/login")
     public String loginConfirm(@Valid @ModelAttribute LoginBindingModel loginBindingModel,
                                BindingResult bindingResult,
-                               RedirectAttributes redirectAttributes,
-                               HttpSession httpSession) {
+                               RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("loginBindingModel", loginBindingModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.loginBindingModel", bindingResult);
@@ -87,9 +86,9 @@ public class UserController {
 
             return "redirect:login";
         }
-        httpSession.setAttribute("user", user);
+//        httpSession.setAttribute("user", user);
 
-        userService.login(user);
+//        userService.login(user);
         return "/home";
     }
 
